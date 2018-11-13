@@ -1,6 +1,6 @@
 {
   "server-host": "0.0.0.0",
   "server-port": 4000,
-  "wallet-host": "0.0.0.0",
+  "wallet-host": "node",
   "block-explorer-url": "https://HNScan.com"
 }
