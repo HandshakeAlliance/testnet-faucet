@@ -1,0 +1,32 @@
+/* ----- NAVIGATION BAR ----- */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(222, 222, 222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.navbarContainer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1087px) {
+  .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.navOption {
+  margin: 0 10px;
+  padding: 10px 15px;
+  justify-content: center;
+}

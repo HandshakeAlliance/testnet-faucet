@@ -1,0 +1,10 @@
+{
+  "server-host": "localhost",
+  "server-port": 4001,
+  "browsersync-port": 7001,
+  "wallet-host": "localhost",
+  "wallet-id": "primary",
+  "block-explorer-url": "localhost:7000",
+  "node-api-key": "api-key",
+  "node-network": "testnet"
+}

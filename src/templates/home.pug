@@ -1,0 +1,36 @@
+extends layouts/layout
+
+block content
+  .contentContainer
+    .walletBalanceContainer
+      .walletTextContainer
+        .walletBalance
+          span="Current Balance: "
+          span=numberWithCommas(balance) + " tHNS"
+        .walletAvailable
+          span="Available for Withdraw: "
+          span(name="available")=numberWithCommas(available) + " tHNS"
+      hr.underline
+    .sendCoinsContainer
+      h3.sendTitle Send Testnet Tokens
+      form(onsubmit="handleSubmit(event)").sendCoinsForm
+        span.errorMessage
+        input(required name="address" onclick="resetInput(event)" placeholder="Your Handshake Testnet Address").addressInput
+        .secondLine
+          input(required name="amount" onclick="resetInput(event)" placeholder="Amount to Withdraw" type="number" step="0.01").amountInput
+          button.sendButton Send
+    .successMessage
+      svg.checkmark(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="70")
+        circle.checkmarkCircle(cx="26" cy="26" r="23" fill="none")
+        path.checkmarkCheck(fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8")
+      span.transactionConfirmation
+    .addressContainer
+      .addressTextContainer
+        h3 Faucet Address:
+        span=address
+        span.sendBack Send coins back when you don't need them anymore.
+      .qrCodeContainer
+        span QRcode
+  script.
+    available="#{available}"
+

@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Shared Classes */
+.contentContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 0 auto;
+  padding: 40px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bulma Overrides */
+
+/* Adjust Bulma cards to have border-radaius of 10px */
+.card {
+  border-radius: 10px;
+  width: 100%;
+  margin: 10px;
+}
+
+/* Have pagination automatically go full width of the page */
+.paginationNav {
+  width: 100%;
+}

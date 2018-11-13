@@ -1,0 +1,129 @@
+/* ----- Reusable ----- */
+.footerSection {
+  background-color: #f5f5f5;
+  color: #000;
+  height: 400px;
+  padding: 8px 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media (max-width: 1087px) {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.spacer {
+  flex-grow: 1;
+
+  @media (max-width: 1087px) {
+    display: none;
+  }
+}
+
+.linksTitle {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.link {
+  text-decoration: none;
+  color: #696969;
+  margin-top: 15px;
+  letter-spacing: .75px;
+  font-size: 14px;
+}
+
+/* ----- Left ----- */
+.leftContainer {
+  height: 275px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1.5px solid #dbdbdb;
+
+  @media (max-width: 1087px) {
+    flex-direction: column;
+    height: auto;
+    width: 50%;
+    border-right: none;
+    border-bottom: 1.5px solid #dbdbdb;
+  }
+}
+
+.haContainer {
+  height: 140px;
+  width: auto;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+
+.logoTitle {
+  font-family: 'Nunito', sans-serif;
+  margin-top: 5px;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.urkelContainer {
+  height: 140px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.poweredBy {
+  margin: 0 0 5px 2px;
+  font-size: 8px;
+  color: #696969;
+}
+
+.urkel {
+  font-size: 32px;
+  font-weight: bolder;
+  color: #ee8c3a;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ----- Center ----- */
+.centerContainer {
+  height: 150px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1087px) {
+    width: 50%;
+    margin-top: 50px;
+  }
+}
+
+/* ----- Right ----- */
+.rightContainer {
+  height: 150px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1087px) {
+    width: 50%;
+    margin-top: 75px;
+    margin-bottom: 75px;
+
+  }
+}
