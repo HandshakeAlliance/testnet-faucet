@@ -9,6 +9,7 @@ body {
   max-width: 1200px;
   margin: 0 auto 0 auto;
   padding: 40px 10px;
+  min-height: 70vh;
 
   display: flex;
   flex-direction: column;

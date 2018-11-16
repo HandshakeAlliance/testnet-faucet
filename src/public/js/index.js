@@ -1,5 +1,3 @@
-const config = require("config");
-
 function handleSubmit(e) {
   e.preventDefault();
 
@@ -56,9 +54,9 @@ function handleSubmit(e) {
       checkmark.classList.add("active");
       txText.innerHTML = `You have been sent ${
         amount.value
-      } HNS! View the transaction <a href="${config.get(
-        "block-explorer-url"
-      )}/tx/${data.hash}">here</a>`;
+      } HNS! View the transaction <a href="http://localhost:7000/tx/${
+        data.hash
+      }">here</a>`;
     } else if (xhr.status >= 400 && xhr.status < 500) {
       if (xhr.status === 429) {
         errorMessage.innerHTML =

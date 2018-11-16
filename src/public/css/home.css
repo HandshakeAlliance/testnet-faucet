@@ -61,6 +61,8 @@
   padding-left: 10px;
 
   @media (min-width: 768px) {
+    font-size: 14px;
+    height: 35px;
     width: 400px;
   }
 }
@@ -78,6 +80,8 @@
   width: 200px;
   padding-left: 10px;
   @media (min-width: 768px) {
+    font-size: 14px;
+    height: 35px;
     width: 300px;
   }
 }
@@ -90,6 +94,16 @@
   margin-left: 10px;
   color: #fff;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #693afa;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    height: 35px;
+  }
 }
 
 .addressContainer {
@@ -104,6 +118,7 @@
 .addressTextContainer {
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .sendBack {
@@ -216,4 +231,65 @@ svg > .checkmarkCheck {
   100% {
     stroke-dashoffset: 0;
   }
+}
+
+.faucetAddressContainer {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  border: 1px solid rgb(218, 225, 233);
+  font-size: 14px;
+}
+
+.addressWrapper {
+  color: rgb(78, 92, 110);
+  padding: 10px;
+}
+
+.copyButton {
+  margin-left: 10px;
+  color: #693afa;
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+
+  &::after {
+    content: attr(data-label);
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    opacity: 0.001;
+    text-align: center;
+    transform: translate3d(-50%, 0, 0);
+    white-space: nowrap;
+  }
+}
+
+/* Inspired by digital ocean */
+.copying {
+  &::after {
+    animation: floatup 0.5s ease-in-out;
+  }
+}
+
+@keyframes floatup {
+  20% {
+    opacity: 0.999;
+  }
+  100% {
+    transform: translate3d(-50%, -17px, 0);
+  }
+}
+
+.addressAndCopyContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sendBack {
+  text-align: center;
+  font-size: 12px;
 }

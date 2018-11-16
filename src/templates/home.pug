@@ -12,7 +12,7 @@ block content
           span(name="available")=numberWithCommas(available) + " tHNS"
       hr.underline
     .sendCoinsContainer
-      h3.sendTitle Send Testnet Tokens
+      h3.sendTitle Receive Testnet Tokens
       form(onsubmit="handleSubmit(event)").sendCoinsForm
         span.errorMessage
         input(required name="address" onclick="resetInput(event)" placeholder="Your Handshake Testnet Address").addressInput
@@ -26,8 +26,12 @@ block content
       span.transactionConfirmation
     .addressContainer
       .addressTextContainer
-        h3 Faucet Address:
-        span=address
+        .addressAndCopyContainer
+          .faucetAddressContainer
+            .addressWrapper
+              span.address=address
+          span(data-label="Copied").copyButton Copy
+
         span.sendBack Send coins back when you don't need them anymore.
       .qrCodeContainer
         span QRcode

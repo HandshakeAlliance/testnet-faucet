@@ -2,6 +2,9 @@ import config from "config";
 import gulp from "gulp";
 import browserSync from "browser-sync";
 import del from "del";
+import replace from "gulp-replace";
+
+//Javascript Imports
 import rename from "gulp-rename";
 import concat from "gulp-concat";
 import terser from "gulp-terser";
@@ -79,6 +82,18 @@ function scripts() {
     .pipe(gulp.dest(paths.scripts.dest));
 }
 
+//Easiest way to add variables in that I found - can change later if we want.
+function prodScripts() {
+  return gulp
+    .src(paths.scripts.src)
+    .pipe(replace("http://localhost:7000", "https://hnscan.com"))
+    .pipe(sourcemaps.init())
+    .pipe(terser())
+    .pipe(concat("main.min.js"))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.scripts.dest));
+}
+
 ////CSS
 function css() {
   var plugins = [
@@ -148,7 +163,7 @@ function watch(done) {
 //Build function
 const build = gulp.series(
   clean,
-  gulp.parallel(templates, css, scripts, img, misc)
+  gulp.parallel(templates, css, prodScripts, img, misc)
 );
 
 //All functions that we export

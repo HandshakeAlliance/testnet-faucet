@@ -28,7 +28,6 @@
     "cssnano": "^4.1.7",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
-    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-nodemon": "^2.4.1",
     "gulp-postcss": "^8.0.0",
@@ -51,13 +50,14 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.1.5",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "@babel/register": "^7.0.0",
     "eslint": "^5.4.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "gulp-pug-linter": "^1.1.0",
+    "gulp-replace": "^1.0.0",
     "nodemon": "^1.18.3",
     "prettier": "^1.14.2",
     "pug-lint": "^2.5.0"
