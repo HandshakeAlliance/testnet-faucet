@@ -2,7 +2,6 @@ function handleSubmit(e) {
   e.preventDefault();
 
   //Grab inputs, and do quick validate.
-  // let available = document.querySelector(`span[name="available"]`);
 
   let address = document.querySelector(`input[name="address"]`);
 
@@ -21,7 +20,16 @@ function handleSubmit(e) {
   //Available passed in through home.pug template !!
   let availableHNS = available;
 
-  if (amount.value > availableHNS) {
+  if (amount.value == 0) {
+    errorMessage.innerHTML = "Please enter an amount above 0.";
+    errorMessage.classList.add("visible");
+
+    amount.classList.add("error");
+
+    return;
+  }
+
+  if (Math.round(amount.value * 100) > Math.round(availableHNS * 100)) {
     errorMessage.innerHTML =
       "You can't withdraw more than the available amount.";
     errorMessage.classList.add("visible");
@@ -54,7 +62,7 @@ function handleSubmit(e) {
       checkmark.classList.add("active");
       txText.innerHTML = `You have been sent ${
         amount.value
-      } HNS! View the transaction <a href="http://localhost:7000/tx/${
+      } HNS! View the transaction <a class="purpleLink" target="_blank" rel="noopener noreferrer" href="http://localhost:7000/tx/${
         data.hash
       }">here</a>`;
     } else if (xhr.status >= 400 && xhr.status < 500) {
@@ -77,16 +85,6 @@ function handleSubmit(e) {
       amount: amount.value * 1000000
     })
   );
-
-  //While loading, render spinning circle
-  //
-  //If successful Show circle with Check mark
-  //
-  //Then show Transaction hash that is returned with link to our block explorer.
-  //
-  //If not, show original form -> With error.
-
-  //This is not the most ideal way as someone could just change the value of available, but that's unlikely 1, and 2 if they do it then they'll still get rejected in the backend.
 }
 
 function resetInput(e) {

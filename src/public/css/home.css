@@ -1,4 +1,5 @@
 .walletBalanceContainer {
+  margin-top: 50px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -171,13 +172,13 @@
 
 /* 'SUCCESS!' check animation */
 svg.checkmark {
-  width: 75px;
-  height: 75px;
+  width: 150px;
+  height: 150px;
   margin: 2em auto;
   border-radius: 50%;
   display: block;
   stroke-width: 4;
-  stroke: #000000;
+  stroke: #693afa;
   stroke-miterlimit: 10;
   box-shadow: inset 0px 0px 0px #7ac142;
   transition: 1s all ease;
@@ -194,14 +195,14 @@ svg.checkmark.active {
 @keyframes moveupwards {
   0%,
   75% {
-    width: 75px;
-    height: 75px;
+    width: 150px;
+    height: 150px;
     margin: 2em auto;
   }
 
   100% {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     margin: 1em auto;
   }
 }
@@ -213,7 +214,7 @@ svg > .checkmarkCircle {
   stroke-dashoffset: 166;
   stroke-width: 3;
   stroke-miterlimit: 10;
-  stroke: #000000;
+  stroke: #693afa;
   fill: none;
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
@@ -231,6 +232,10 @@ svg > .checkmarkCheck {
   100% {
     stroke-dashoffset: 0;
   }
+}
+
+.purpleLink {
+  color: #693afa;
 }
 
 .faucetAddressContainer {
