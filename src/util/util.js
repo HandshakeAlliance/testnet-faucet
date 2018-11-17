@@ -24,7 +24,7 @@ function convertToHNS(value, hasZeros = true) {
   if (hasZeros) {
     valueBN = temp.dividedBy(1000000);
   } else {
-    valueBN.temp.multipliedBy(1000000);
+    valueBN = temp.multipliedBy(1000000);
   }
 
   return valueBN;

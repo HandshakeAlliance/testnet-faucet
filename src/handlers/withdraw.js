@@ -12,6 +12,8 @@ async function withdrawHandler(request, h) {
   //Calculate available to withdraw
   let available = calculateWithdraw(balance);
 
+  available = convertToHNS(available, false);
+
   let address = new Address(request.payload.address);
 
   //Expect this to be in subunit
@@ -31,7 +33,7 @@ async function withdrawHandler(request, h) {
   }
 
   const options = {
-    outputs: [{ value: amount, address: address }]
+    outputs: [{ value: amount, address: address.toString("testnet") }]
   };
 
   //We need error checking.
